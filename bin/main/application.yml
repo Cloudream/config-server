@@ -1,0 +1,22 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: config-server 
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/Cloudream/opensource
+          searchPaths: config-file
+          username: ubuntu_vip@sina.cn
+          password: Amulet_999
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
+      
