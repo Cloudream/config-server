@@ -1,7 +1,7 @@
 #!/bin/bash
 REGISTRY_URL=192.168.199.135:2375
 WORK_DIR=/root/work_build
-PROJECT_NAME=eureka-server
+PROJECT_NAME=config-server
 if [ ! -e ${WORK_DIR}/${PROJECT_NAME} ] && [ ! -d ${WORK_DIR}/${PROJECT_NAME} ]; then
 mkdir -p ${WORK_DIR}/${PROJECT_NAME}
 echo "Create Dir: ${WORK_DIR}/${PROJECT_NAME}"
@@ -10,8 +10,8 @@ if [ -e ${WORK_DIR}/${PROJECT_NAME}/Dockerfile ]; then
 rm -rf ${WORK_DIR}/${PROJECT_NAME}/Dockerfile
 echo "Remove File: ${WORK_DIR}/${PROJECT_NAME}/Dockerfile"
 fi
-cp /root/.jenkins/workspace/eureka-server/docker/Dockerfile ${WORK_DIR}/${PROJECT_NAME}/
-cp /root/.jenkins/workspace/eureka-server/build/libs/*.jar ${WORK_DIR}/${PROJECT_NAME}/
+cp /root/.jenkins/workspace/config-server/docker/Dockerfile ${WORK_DIR}/${PROJECT_NAME}/
+cp /root/.jenkins/workspace/config-server/build/libs/*.jar ${WORK_DIR}/${PROJECT_NAME}/
 cd ${WORK_DIR}/${PROJECT_NAME}/
 docker build -t ${REGISTRY_URL}/eshop-detail/${PROJECT_NAME} .
 docker push ${REGISTRY_URL}/eshop-detail/${PROJECT_NAME}

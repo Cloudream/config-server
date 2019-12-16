@@ -32,18 +32,18 @@ targetCompatibility = 1.8
 
 //插件运行
 bootJar {
-    mainClassName = 'com.cloudream.greeting.service.GreetingServiceApplication'
+    mainClassName = 'com.cloudream.config.server.ConfigServerApplication'
 }
 
 //指定项目编码
 tasks.withType(JavaCompile) {  
     options.encoding = "UTF-8"
 }
-//打包
+/*打包
 task taskJar(type:Jar,dependsOn:compileJava) {
     from 'build/classes'
     destinationDir(file('build/libs'))
-}
+}*/
 // 依赖列表
 dependencies {
 	implementation ('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
